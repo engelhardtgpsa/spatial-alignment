@@ -35,6 +35,13 @@ setup(
         "tqdm==4.64.0",
         "squidpy==1.1.2",
     ],
+    extras_require={
+        "dev": [
+            "flake8",
+            "pytest",
+            "pip-tools"
+        ]
+    },
     include_package_data=True,
     classifiers=[
         "Development Status :: 4 - Beta",
