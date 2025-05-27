@@ -1,0 +1,33 @@
+name: Upgrade requirements
+
+on:
+  schedule:
+    - cron: '0 2 * * 1'   # every Monday at 02:00 UTC
+
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.13
+
+      - name: Install pip-tools
+        run: pip install pip-tools
+
+      - name: Upgrade requirements
+        run: |
+          pip-compile --upgrade requirements.in
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          commit-message: chore: upgrade dependencies
+          branch: upgrade-deps-${{ github.run_id }}
+          title: Upgrade dependencies via pip-compile
+          labels: dependencies, automated

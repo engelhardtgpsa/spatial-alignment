@@ -1,0 +1,7 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"  # where your requirements.txt or pyproject.toml lives
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
