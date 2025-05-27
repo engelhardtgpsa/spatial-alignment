@@ -26,3 +26,11 @@ gp_functions.py
 *.ipynb
 .ipynb_checkpoints/
 docs/
+examples/gpsa_test_env/
+gpsa_env/
+gpsa310_clean_env/
+emily-testing/
+*.egg-info/
+__pycache__/
+*.py[cod]
+gpsa_env310/
