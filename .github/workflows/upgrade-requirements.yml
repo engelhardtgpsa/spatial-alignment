@@ -27,7 +27,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: chore: upgrade dependencies
+          commit-message: "chore: upgrade dependencies"
           branch: upgrade-deps-${{ github.run_id }}
-          title: Upgrade dependencies via pip-compile
+          title: "Upgrade dependencies via pip-compile"
           labels: dependencies, automated
