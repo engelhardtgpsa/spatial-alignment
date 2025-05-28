@@ -3,7 +3,7 @@ name: Upgrade requirements
 on:
   schedule:
     - cron: '0 2 * * 1'   # every Monday at 02:00 UTC
-
+  workflow_dispatch:
 jobs:
   upgrade:
     runs-on: ubuntu-latest
