@@ -34,3 +34,11 @@ emily-testing/
 __pycache__/
 *.py[cod]
 gpsa_env310/
+# Ignore virtual environments
+gpsa_env/
+gpsa_env310/
+gpsa310_clean_env/
+examples/gpsa_test_env/
+*.egg-info/
+__pycache__/
+*.py[cod]
