@@ -18,7 +18,7 @@ setup(
     packages=find_packages(include=["gpsa", "gpsa.*"]),
     python_requires=">=3.7, <4.0",
     install_requires=[
-        "torch>=1.13,<3.0",
+        "torch==2.2.2",
         "numpy>=1.21,<1.25",
         "pandas==1.3.5",
         "scikit-learn==1.0.2",
