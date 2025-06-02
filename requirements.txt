@@ -434,6 +434,7 @@ zipp==3.23.0
     #   -c constraints.txt
     #   -r requirements.in
     #   pandas
+    #   scikit-learn
     #   scipy
 pandas==2.2.2
     # via
@@ -443,14 +444,21 @@ python-dateutil==2.9.0.post0
     # via pandas
 pytz==2025.2
     # via pandas
+scikit-learn==1.2.2
+    # via
+    #   -c constraints.txt
+    #   -r requirements.in
 scipy==1.12.0
     # via
     #   -c constraints.txt
     #   -r requirements.in
+    #   scikit-learn
 six==1.17.0
     # via python-dateutil
 sympy==1.14.0
     # via torch
+threadpoolctl==3.6.0
+    # via scikit-learn
 torch==2.2.2
     # via
     #   -c constraints.txt
