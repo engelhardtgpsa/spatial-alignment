@@ -147,7 +147,10 @@ natsort==8.4.0
     #   anndata
     #   scanpy
 networkx==3.4.2
+    # via torch
+numpy==1.26.4
     # via
+<<<<<<< HEAD
     #   scanpy
     #   scikit-image
     #   torch
@@ -427,3 +430,15 @@ zipp==3.23.0
 # The following packages are considered to be unsafe in a requirements file:
 # pip
 # setuptools
+=======
+    #   -c constraints.txt
+    #   -r requirements.in
+sympy==1.14.0
+    # via torch
+torch==2.2.2
+    # via
+    #   -c constraints.txt
+    #   -r requirements.in
+typing-extensions==4.14.0
+    # via torch
+>>>>>>> 876dfbc (Include numpy in requirements.in and regenerate requirements.txt)

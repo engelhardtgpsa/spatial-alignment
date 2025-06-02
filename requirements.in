@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 git+https://github.com/engelhardtgpsa/spatial-alignment.git@integrate-ci-deps#egg=gpsa
 torch==2.2.2
 numpy
@@ -11,3 +12,7 @@ pytest
 pip-tools
 
 
+=======
+torch==2.2.2
+numpy
+>>>>>>> 876dfbc (Include numpy in requirements.in and regenerate requirements.txt)

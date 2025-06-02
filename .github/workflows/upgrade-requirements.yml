@@ -31,7 +31,7 @@ jobs:
 
       - name: Upgrade requirements
         run: |
-          pip-compile --upgrade requirements.in
+          pip-compile --upgrade --constraint constraints.txt requirements.in
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
