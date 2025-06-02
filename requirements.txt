@@ -433,6 +433,17 @@ zipp==3.23.0
 =======
     #   -c constraints.txt
     #   -r requirements.in
+    #   pandas
+pandas==2.2.2
+    # via
+    #   -c constraints.txt
+    #   -r requirements.in
+python-dateutil==2.9.0.post0
+    # via pandas
+pytz==2025.2
+    # via pandas
+six==1.17.0
+    # via python-dateutil
 sympy==1.14.0
     # via torch
 torch==2.2.2
@@ -441,4 +452,9 @@ torch==2.2.2
     #   -r requirements.in
 typing-extensions==4.14.0
     # via torch
+<<<<<<< HEAD
 >>>>>>> 876dfbc (Include numpy in requirements.in and regenerate requirements.txt)
+=======
+tzdata==2025.2
+    # via pandas
+>>>>>>> 0471f42 (Add pandas to requirements and regenerate requirements.txt)
