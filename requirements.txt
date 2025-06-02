@@ -21,6 +21,7 @@ numpy==1.26.4
     #   -c constraints.txt
     #   -r requirements.in
     #   pandas
+    #   scipy
 pandas==2.2.2
     # via
     #   -c constraints.txt
@@ -29,6 +30,10 @@ python-dateutil==2.9.0.post0
     # via pandas
 pytz==2025.2
     # via pandas
+scipy==1.12.0
+    # via
+    #   -c constraints.txt
+    #   -r requirements.in
 six==1.17.0
     # via python-dateutil
 sympy==1.14.0
