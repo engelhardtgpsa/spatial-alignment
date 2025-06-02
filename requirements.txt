@@ -20,6 +20,17 @@ numpy==1.26.4
     # via
     #   -c constraints.txt
     #   -r requirements.in
+    #   pandas
+pandas==2.2.2
+    # via
+    #   -c constraints.txt
+    #   -r requirements.in
+python-dateutil==2.9.0.post0
+    # via pandas
+pytz==2025.2
+    # via pandas
+six==1.17.0
+    # via python-dateutil
 sympy==1.14.0
     # via torch
 torch==2.2.2
@@ -28,3 +39,5 @@ torch==2.2.2
     #   -r requirements.in
 typing-extensions==4.14.0
     # via torch
+tzdata==2025.2
+    # via pandas
