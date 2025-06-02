@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 git+https://github.com/engelhardtgpsa/spatial-alignment.git@integrate-ci-deps#egg=gpsa
 torch==2.2.2
 numpy
-<<<<<<< HEAD
+
 pandas
 scipy
 scikit-learn
@@ -13,10 +12,3 @@ pytest
 pip-tools
 
 
-=======
-torch==2.2.2
-numpy
->>>>>>> 876dfbc (Include numpy in requirements.in and regenerate requirements.txt)
-=======
-pandas
->>>>>>> 0471f42 (Add pandas to requirements and regenerate requirements.txt)
