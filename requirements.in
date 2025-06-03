@@ -1,3 +1,4 @@
+git+https://github.com/engelhardtgpsa/spatial-alignment.git@main#egg=gpsa
 torch==2.2.2
 numpy
 pandas

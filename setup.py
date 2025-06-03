@@ -20,7 +20,7 @@ setup(
     install_requires=[
         "torch==2.2.2",
         "numpy>=1.21,<1.25",
-        "pandas==1.3.5",
+        "pandas>=1.3.5,<2.3",
         "scikit-learn==1.0.2",
         "pcpca==0.3",
         "plottify==1.1",
