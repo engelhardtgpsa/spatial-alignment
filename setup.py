@@ -32,7 +32,7 @@ setup(
         "auto_mix_prep==0.2.0",
         "matplotlib==3.5.1",
         "tensorflow-macos>=2.10,<2.13; sys_platform=='darwin'",
-        "tensorflow>=2.12,<2.13; sys_platform!='darwin'",
+        "tensorflow>=2.16,<2.19; sys_platform!='darwin'",
         "tqdm==4.64.0",
         "squidpy==1.1.2",
     ],
