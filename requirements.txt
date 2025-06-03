@@ -302,8 +302,9 @@ slicerator==1.1.0
     # via pims
 squidpy==1.1.2
     # via gpsa
-statsmodels==0.13.2
+statsmodels==0.14.0
     # via
+    #   -c constraints.txt
     #   gpsa
     #   scanpy
     #   squidpy
