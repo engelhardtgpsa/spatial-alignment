@@ -27,7 +27,7 @@ setup(
         "scanpy==1.9.1",
         "scipy==1.12.0",  
         "seaborn==0.11.2",
-        "statsmodels==0.13.2",
+        "statsmodels==0.14.0",
         "anndata==0.8.0",
         "auto_mix_prep==0.2.0",
         "matplotlib==3.5.1",
