@@ -14,7 +14,7 @@ from gpsa import rbf_kernel
 def test_variational_gpsa_forward_runs_without_error():
     # 1. Create toy one‐view data
     np.random.seed(0)
-    X = np.random.rand(50, 2)                               
+    X = np.random.rand(50, 2)
     Y = np.sin(2 * np.pi * X[:, 0])[:, None] + 0.1 * np.random.randn(50, 1)
 
     x = torch.tensor(X, dtype=torch.float32)
@@ -58,4 +58,10 @@ def test_variational_gpsa_forward_runs_without_error():
     # 4. Basic assertions to ensure shapes look right
     assert "demo" in G_means
     assert G_means["demo"].ndim == 2
-    assert F_samples.ndim >= 2
+
+    # F_samples is a dict, so ensure it has the expected structure
+    assert isinstance(F_samples, dict)
+    assert "demo" in F_samples
+    demo_tensor = F_samples["demo"]
+    assert isinstance(demo_tensor, torch.Tensor)
+    assert demo_tensor.ndim >= 2
