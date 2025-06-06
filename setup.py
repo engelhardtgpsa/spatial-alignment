@@ -30,7 +30,7 @@ setup(
         "statsmodels==0.14.0",
         "anndata==0.8.0",
         "auto_mix_prep==0.2.0",
-        "matplotlib==3.5.1",
+        "matplotlib>=3.8.0",
         "tensorflow-macos>=2.10,<2.13; sys_platform=='darwin'",
         "tensorflow>=2.16,<2.19; sys_platform!='darwin'",
         "tqdm==4.64.0",
