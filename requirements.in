@@ -1,0 +1,6 @@
+git+https://github.com/engelhardtgpsa/spatial-alignment.git@add-ci-and-deps-automation#egg=gpsa
+torch==2.2.2
+numpy
+pandas
+scipy
+scikit-learn
