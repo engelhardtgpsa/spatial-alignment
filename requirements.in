@@ -5,6 +5,7 @@ numpy
 pandas
 scipy
 scikit-learn
+seaborn>=0.13.2
 
 # Dev-only tools
 flake8
