@@ -58,7 +58,6 @@ def test_variational_gpsa_forward_runs_without_error():
     # 4. Basic assertions to ensure shapes look right
     assert "demo" in G_means
     assert G_means["demo"].ndim == 2
-<<<<<<< HEAD
 
     # F_samples is a dict, so ensure it has the expected structure
     assert isinstance(F_samples, dict)
@@ -66,6 +65,3 @@ def test_variational_gpsa_forward_runs_without_error():
     demo_tensor = F_samples["demo"]
     assert isinstance(demo_tensor, torch.Tensor)
     assert demo_tensor.ndim >= 2
-=======
-    assert F_samples.ndim >= 2
->>>>>>> 4d051e2 (matplotlib>=3.8.0 plus adding an additional test)

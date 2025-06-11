@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import anndata
+import os
 
 from gpsa import VariationalGPSA
 from gpsa import matern12_kernel, rbf_kernel
@@ -22,7 +23,8 @@ N_EPOCHS = 3000
 PRINT_EVERY = 100
 
 
-data = anndata.read_h5ad("./synthetic_data.h5ad")
+file_path = os.path.join(os.path.dirname(__file__), "synthetic_data.h5ad")
+data = anndata.read_h5ad(file_path)
 X = data.obsm["spatial"]
 Y = data.X
 view_idx = [np.where(data.obs.batch.values == ii)[0] for ii in range(2)]

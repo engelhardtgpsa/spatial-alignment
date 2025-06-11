@@ -316,11 +316,12 @@ scipy==1.12.0
     #   scanpy
     #   scikit-image
     #   scikit-learn
-    #   seaborn
     #   statsmodels
     #   umap-learn
-seaborn==0.11.2
+seaborn==0.13.2
     # via
+    #   -c constraints.txt
+    #   -r requirements.in
     #   gpsa
     #   scanpy
 session-info==1.0.1
