@@ -43,3 +43,7 @@ examples/gpsa_test_env/
 __pycache__/
 *.py[cod]
 testenv/
+testenv/
+cleanenv/
+dist/
+*.egg-info/
