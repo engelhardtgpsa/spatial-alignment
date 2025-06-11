@@ -42,3 +42,4 @@ examples/gpsa_test_env/
 *.egg-info/
 __pycache__/
 *.py[cod]
+testenv/
