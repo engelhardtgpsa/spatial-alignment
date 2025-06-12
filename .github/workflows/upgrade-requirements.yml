@@ -1,9 +1,6 @@
 name: Upgrade requirements
 
 on:
-  push:
-    branches:
-      - add-ci-and-deps-automation
   schedule:
     - cron: '0 2 * * 1'   # every Monday at 02:00 UTC
   workflow_dispatch:
