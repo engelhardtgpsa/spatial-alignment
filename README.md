@@ -1,9 +1,8 @@
 # Gaussian Process Spatial Alignment (GPSA)
 
-
 ---
 
-The `gpsa` package implements Gaussian Process Spatial Alignment, a probabilistic model for aligning spatial genomics data into a shared coordinate system using deep Gaussian processes. This work is described in the paper:\
+The `gpsa` package implements Gaussian Process Spatial Alignment, a probabilistic model for aligning spatial genomics data into a shared coordinate system using deep Gaussian processes. This work is described in the paper:
 ➤️ [Alignment of spatial genomics and histology data using deep Gaussian processes](https://www.biorxiv.org/content/10.1101/2022.01.10.475692v1).
 
 📄 [Full Documentation](https://andrewcharlesjones.github.io/spatial-alignment/gpsa.html)
@@ -32,80 +31,71 @@ pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://
 
 The GPSA package provides two primary classes:
 
-- `GPSA` — defines the core generative model for probabilistic spatial alignment.
-- `VariationalGPSA` — extends `GPSA` with a variational approximation for scalable inference.
+* `GPSA` — defines the core generative model for probabilistic spatial alignment.
+* `VariationalGPSA` — extends `GPSA` with a variational approximation for scalable inference.
 
 The package allows joint modeling of multiple spatial genomics datasets by correcting spatial misalignments across experiments or modalities.
 
 ---
 
-## 🤪 Quick Example
+## 🧪 Quick Example
 
-We demonstrate GPSA on a small synthetic dataset (available in `examples/`).
+We demonstrate GPSA on a small synthetic dataset (available in `examples/`). See [`examples/grid_example.py`](examples/grid_example.py) for full runnable code.
 
-```python
-import numpy as np
-import anndata
+---
 
-data = anndata.read_h5ad("./examples/synthetic_data.h5ad")
+## 🧪 Testing New Builds on TestPyPI
 
-X = data.obsm["spatial"]
-Y = data.X
-view_idx = [np.where(data.obs.batch.values == ii)[0] for ii in range(2)]
-n_samples_list = [len(x) for x in view_idx]
+This section walks you through how to test your TestPyPI package builds using a clean virtual environment. This is especially helpful for validating your published package before releasing to PyPI.
 
-import torch
+### STEP 1: Create a Clean Python 3.8, 3.9, 3.10, or 3.11 Environment
 
-x = torch.from_numpy(X).float().clone()
-y = torch.from_numpy(Y).float().clone()
+Make sure you have Python 3.8, 3.9, 3.10, or 3.11 installed. Then create and activate a virtual environment:
 
-data_dict = {
-    "expression": {
-        "spatial_coords": x,
-        "outputs": y,
-        "n_samples_list": n_samples_list,
-    }
-}
+```bash
+python3.10 -m venv gpsa_test_env
+source gpsa_test_env/bin/activate
 ```
 
-Now instantiate and train the model:
+### STEP 2: Install GPSA from TestPyPI
 
-```python
-from gpsa import VariationalGPSA
-from gpsa import rbf_kernel
+Install the GPSA package (adjust the version as needed) from TestPyPI, while allowing dependencies to come from PyPI:
 
-model = VariationalGPSA(
-    data_dict,
-    n_spatial_dims=2,
-    m_X_per_view=50,
-    m_G=50,
-    data_init=True,
-    n_latent_gps={"expression": None},
-    mean_function="identity_fixed",
-    kernel_func_warp=rbf_kernel,
-    kernel_func_data=rbf_kernel,
-    fixed_view_idx=0,
-)
-
-optimizer = torch.optim.Adam(model.parameters(), lr=1e-2)
-
-def train(model, loss_fn, optimizer):
-    model.train()
-    G_means, G_samples, F_latent_samples, F_samples = model.forward(
-        {"expression": x}, view_idx=view_idx, Ns=n_samples_list, S=5
-    )
-    loss = loss_fn(data_dict, F_samples)
-    optimizer.zero_grad()
-    loss.backward()
-    optimizer.step()
-    return loss.item()
-
-for t in range(3000):
-    loss = train(model, model.loss_fn, optimizer)
+```bash
+pip install --extra-index-url https://test.pypi.org/simple/ gpsa==0.6.5 --timeout 180
 ```
 
-For full runnable example code, see:\
-➤️ [`examples/grid_example.py`](examples/grid_example.py)
+Notes:
+
+* Use `--extra-index-url` (not `--index-url`) so pip installs `gpsa` from TestPyPI, but dependencies from real PyPI.
+* The `--timeout 180` flag allows for longer download times if needed.
+
+### STEP 3: Clone the GitHub Repository
+
+If you haven't already, clone the repository and navigate to the example folder:
+
+```bash
+git clone https://github.com/engelhardtgpsa/spatial-alignment.git
+cd spatial-alignment/examples
+```
+
+### STEP 4: Run the Example Script
+
+Run the example:
+
+```bash
+python grid_example.py
+```
+
+This will simulate synthetic data and run GPSA alignment. It should complete in a few minutes depending on your machine.
+
+### CLEANUP
+
+To deactivate the environment when you're done:
+
+```bash
+deactivate
+```
 
 ---
 
@@ -118,8 +108,6 @@ Example output showing the alignment of two misaligned spatial views:
 The aligned coordinates converge during training:
 
 ![Alignment Animation](examples/alignment_animation_template.gif)
-
-
 
 ---
 
@@ -144,4 +132,3 @@ If you use GPSA in your work, please cite:
 MIT License
 
 ---
-

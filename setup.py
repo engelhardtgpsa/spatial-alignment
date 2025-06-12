@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="gpsa",
-    version="0.6.4",
+    version="0.6.5",
     author="Andy Jones",
     author_email="ajones788@gmail.com",
     description="Gaussian Process Spatial Alignment (GPSA)",
