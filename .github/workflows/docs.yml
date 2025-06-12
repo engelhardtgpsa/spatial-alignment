@@ -28,7 +28,7 @@ jobs:
         run: |
           pip install pdoc
           python setup.py install
-          pip install -r requirements.txt 
+          pip install -r requirements.txt
 
       - name: Build docs
         run: pdoc -o docs/ gpsa
@@ -41,6 +41,12 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    permissions:
+      pages: write
+      id-token: write
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
