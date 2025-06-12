@@ -39,3 +39,4 @@ jobs:
       - name: Sanity‐check example
         run: |
           python examples/grid_example.py
+
