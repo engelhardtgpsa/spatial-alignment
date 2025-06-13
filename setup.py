@@ -16,7 +16,7 @@ setup(
     url="https://github.com/engelhardtgpsa/spatial-alignment",
     download_url="https://github.com/engelhardtgpsa/spatial-alignment/archive/refs/tags/v0.6.tar.gz",
     packages=find_packages(include=["gpsa", "gpsa.*"]),
-    python_requires=">=3.7, <4.0",
+    python_requires=">=3.9, <3.12",
     install_requires=[
         "torch==2.2.2",
         "numpy==1.26.4",

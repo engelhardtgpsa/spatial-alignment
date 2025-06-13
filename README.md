@@ -50,7 +50,7 @@ This section walks you through how to test your TestPyPI package builds using a 
 
 ### STEP 1: Create a Clean Python 3.8, 3.9, 3.10, or 3.11 Environment
 
-Make sure you have Python 3.8, 3.9, 3.10, or 3.11 installed. Then create and activate a virtual environment:
+Make sure you have Python 3.9, 3.10, or 3.11 installed. Then create and activate a virtual environment:
 
 ```bash
 python3.10 -m venv gpsa_test_env
