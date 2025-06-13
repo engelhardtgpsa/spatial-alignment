@@ -347,15 +347,7 @@ stdlib-list==0.11.1
     # via session-info
 sympy==1.14.0
     # via torch
-tensorboard==2.11.2
-    # via tensorflow-macos
-tensorboard-data-server==0.6.1
-    # via tensorboard
-tensorboard-plugin-wit==1.8.1
-    # via tensorboard
-tensorflow-estimator==2.11.0
-    # via tensorflow-macos
-tensorflow-macos==2.11.0
+tensorflow-macos==2.15.0
     # via gpsa
 termcolor==3.1.0
     # via tensorflow-macos
