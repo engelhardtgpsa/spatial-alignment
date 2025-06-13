@@ -7,7 +7,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="gpsa",
-    version="0.6.6",
+    version="0.6.7",
     author="Andy Jones",
     author_email="ajones788@gmail.com",
     description="Gaussian Process Spatial Alignment (GPSA)",
@@ -16,7 +16,7 @@ setup(
     url="https://github.com/engelhardtgpsa/spatial-alignment",
     download_url="https://github.com/engelhardtgpsa/spatial-alignment/archive/refs/tags/v0.6.tar.gz",
     packages=find_packages(include=["gpsa", "gpsa.*"]),
-    python_requires=">=3.9, <3.12",
+    python_requires=">3.9, <3.12",
     install_requires=[
         "torch==2.2.2",
         "numpy==1.26.4",
