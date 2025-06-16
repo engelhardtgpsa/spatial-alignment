@@ -33,7 +33,7 @@ jobs:
 
       - name: Run lint & tests
         run: |
-          flake8
+          flake8 gpsa tests
           pytest tests
 
       - name: Sanity‐check example
