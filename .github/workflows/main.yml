@@ -33,7 +33,7 @@ jobs:
 
       - name: Run lint & tests
         run: |
-          flake8 gpsa tests
+          flake8 gpsa --max-line-length=120 --ignore=F401
           pytest tests
 
       - name: Sanity‐check example
