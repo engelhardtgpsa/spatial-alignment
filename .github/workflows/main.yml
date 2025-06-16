@@ -29,7 +29,7 @@ jobs:
           # install your package (editable mode) and dev extras
           pip install -e .[dev]
           # install the pinned runtime deps
-          pip install -r requirements.txt
+          #pip install -r requirements.txt
 
       - name: Run lint & tests
         run: |
