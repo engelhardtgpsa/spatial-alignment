@@ -27,7 +27,7 @@ jobs:
 
       - name: Install docs deps
         run: |
-          pip install pdoc py-cpuinfo Cython numpy torch scipy pandas
+          pip install pdoc py-cpuinfo Cython numpy torch scipy pandas sklearn
 
       - name: Build docs
         run: pdoc -o docs/ gpsa
