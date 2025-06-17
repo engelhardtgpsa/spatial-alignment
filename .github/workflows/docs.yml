@@ -27,8 +27,7 @@ jobs:
 
       - name: Install docs deps
         run: |
-          pip install pdoc py-cpuinfo Cython numpy
-          pip install -r requirements.txt
+          pip install pdoc py-cpuinfo Cython numpy torch scipy
 
       - name: Build docs
         run: pdoc -o docs/ gpsa
