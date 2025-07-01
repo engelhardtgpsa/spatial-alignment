@@ -5,7 +5,7 @@
 The `gpsa` package implements Gaussian Process Spatial Alignment, a probabilistic model for aligning spatial genomics data into a shared coordinate system using deep Gaussian processes. This work is described in the paper:
 ➤️ [Alignment of spatial genomics and histology data using deep Gaussian processes](https://www.biorxiv.org/content/10.1101/2022.01.10.475692v1).
 
-📄 [Full Documentation](https://andrewcharlesjones.github.io/spatial-alignment/gpsa.html)
+[View the Code on GitHub](https://github.com/engelhardtgpsa/spatial-alignment)
 
 ---
 
@@ -22,7 +22,7 @@ pip install gpsa
 If you are testing a pre-release version on TestPyPI:
 
 ```bash
-pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple gpsa
+pip install --index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple gpsa==0.6.14 --timeout 180 --verbose
 ```
 
 ---
@@ -62,7 +62,7 @@ source gpsa_test_env/bin/activate
 Install the GPSA package (adjust the version as needed) from TestPyPI, while allowing dependencies to come from PyPI:
 
 ```bash
-pip install --extra-index-url https://test.pypi.org/simple/ gpsa==0.6.5 --timeout 180
+pip install --extra-index-url https://test.pypi.org/simple/ gpsa==0.6.14 --timeout 180 --verbose
 ```
  
 Notes:
@@ -109,6 +109,37 @@ The aligned coordinates converge during training:
 
 ![Alignment Animation](examples/alignment_animation_template.gif)
 
+Note that GUI functionality (e.g., matplotlib interactive windows) may fail if tkinter is not installed.
+
+---
+### ⚠️ macOS and Tkinter Issues with Python 3.11
+
+If you're using **Python 3.11 on macOS**, you may encounter an error related to `tkinter` not being found. This is because some Python installers for macOS (especially from python.org) do **not include tkinter by default**. This issue is not specific to GPSA but may affect users trying to run the GUI-based example scripts.
+
+To resolve this issue:
+
+1. **Install `tkinter` via Homebrew:**
+```bash
+brew install tcl-tk
+```
+2. Set environment variables so Python can find the Homebrew-installed libraries (for Bash or Zsh):
+
+```bash
+export LDFLAGS="-L/opt/homebrew/opt/tcl-tk/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/tcl-tk/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/tcl-tk/lib/pkgconfig"
+```
+3. Reinstall Python 3.11 with tkinter support. One way is via pyenv:
+```bash
+brew install pyenv
+env PYTHON_CONFIGURE_OPTS="--with-tcltk-includes='-I/opt/homebrew/opt/tcl-tk/include' --with-tcltk-libs='-L/opt/homebrew/opt/tcl-tk/lib'" pyenv install 3.11.9
+```
+4. Alternatively, consider using a Python distribution that includes tkinter by default, such as:
+Anaconda
+Homebrew Python:
+```bash
+brew install python@3.11
+```
 ---
 
 ## 🐞 Bug Reports
