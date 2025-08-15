@@ -6,7 +6,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="gpsa-engelhardt",
-    version="0.6.14",
+    version="0.6.14",  # bump if 0.6.14 was already uploaded to PyPI
     author="Andy Jones and Barbara Engelhardt",
     author_email="engelhardtgpsa@gmail.com",
     description="Gaussian Process Spatial Alignment (GPSA)",
@@ -14,12 +14,13 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/engelhardtgpsa/spatial-alignment",
     packages=find_packages(
-    include=["gpsa", "gpsa.*"],
-    exclude=("tests", "tests.*", "gpsa.tests", "gpsa.tests.*"),
+        include=["gpsa", "gpsa.*"],
+        exclude=("tests", "tests.*", "gpsa.tests", "gpsa.tests.*"),
+    ),  # <-- CLOSES find_packages HERE
     python_requires=">=3.10, <3.12",
-    license="MIT",
+    license="Apache-2.0",  # keep consistent with classifier & README
     install_requires=[
-        "torch==2.2.2",
+        "torch==2.2.2",        # keep pinned if you want “just works” installs
         "numpy==1.26.4",
         "pandas==2.2.2",
         "scikit-learn==1.3.2",
@@ -33,20 +34,11 @@ setup(
         "auto_mix_prep==0.2.0",
         "matplotlib>=3.8.0",
         "tqdm==4.64.0",
-        "squidpy==1.1.2"
+        "squidpy==1.1.2",
     ],
     extras_require={
-        "dev": [
-            "flake8",
-            "pytest",
-            "pip-tools"
-        ],
-        "docs": [
-            "pdoc",
-            "py-cpuinfo",
-            "Cython",
-            "numpy"        # pdoc → numcodecs needs the headers
-        ]
+        "dev": ["flake8", "pytest", "pip-tools"],
+        "docs": ["pdoc", "py-cpuinfo", "Cython", "numpy"],
     },
     classifiers=[
         "Development Status :: 4 - Beta",
@@ -56,7 +48,7 @@ setup(
         "Programming Language :: Python :: 3.11",
         "Operating System :: OS Independent",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
-        "License :: OSI Approved :: Apache Software License"
+        "License :: OSI Approved :: Apache Software License",
     ],
     include_package_data=True,
 )

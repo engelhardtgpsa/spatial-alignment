@@ -101,4 +101,4 @@ If you use GPSA in your work, please cite:
 
 ## 📜 License
 
-MIT License
+Apache-2.0
