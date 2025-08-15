@@ -5,7 +5,7 @@ here = pathlib.Path(__file__).parent.resolve()
 long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
-    name="gpsa",
+    name="gpsa-engelhardt",
     version="0.6.14",
     author="Andy Jones and Barbara Engelhardt",
     author_email="engelhardtgpsa@gmail.com",
@@ -13,9 +13,11 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/engelhardtgpsa/spatial-alignment",
-    packages=find_packages(include=["gpsa", "gpsa.*"]),
+    packages=find_packages(
+    include=["gpsa", "gpsa.*"],
+    exclude=("tests", "tests.*", "gpsa.tests", "gpsa.tests.*"),
     python_requires=">=3.10, <3.12",
-    license="Apache-2.0",
+    license="MIT",
     install_requires=[
         "torch==2.2.2",
         "numpy==1.26.4",
@@ -51,6 +53,8 @@ setup(
         "Intended Audience :: Science/Research",
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.10",
+        "Programming Language :: Python :: 3.11",
+        "Operating System :: OS Independent",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "License :: OSI Approved :: Apache Software License"
     ],
