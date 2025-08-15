@@ -6,7 +6,7 @@ long_description = (here / "README.md").read_text(encoding="utf-8")
 
 setup(
     name="gpsa-engelhardt",
-    version="0.6.14",  # bump if 0.6.14 was already uploaded to PyPI
+    version="0.6.15",  
     author="Andy Jones and Barbara Engelhardt",
     author_email="engelhardtgpsa@gmail.com",
     description="Gaussian Process Spatial Alignment (GPSA)",

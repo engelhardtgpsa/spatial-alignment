@@ -58,7 +58,7 @@ git clone https://github.com/engelhardtgpsa/spatial-alignment.git
 cd spatial-alignment
 
 # Install GPSA from PyPI (pin to a specific version if desired)
-pip install gpsa-engelhardt==0.6.14
+pip install gpsa-engelhardt==0.6.15
 
 # Run the example
 python examples/grid_example.py
@@ -73,13 +73,14 @@ deactivate
 
 Example output showing the alignment of two misaligned spatial views:
 
-*(Place image here if desired)*
+![Synthetic Data Example](https://raw.githubusercontent.com/engelhardtgpsa/spatial-alignment/main/examples/synthetic_data_example.png)
+
 
 The aligned coordinates converge during training:
 
-*(Place animation here if desired)*
+![Alignment Animation](https://raw.githubusercontent.com/engelhardtgpsa/spatial-alignment/main/examples/alignment_animation.gif)
 
-> GUI backends (e.g., matplotlib with tkinter) may require extra setup on some systems.
+> Note that GUI backends (e.g., matplotlib with tkinter) may require extra setup on some systems.
 
 ---
 
